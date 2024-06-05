@@ -1,26 +1,26 @@
-# search-wp - Ricerca nel sito web Wordpress
+# search-wp - Ricerca nel sito web Wordpress 🔍
 Il funzionamento del search in WordPress si basa su diversi componenti: 
-- template di ricerca (search.php)
-- la query di ricerca
-- il loop di WordPress per mostrare i risultati.
+ 📄 Template di ricerca (search.php)
+ 🔎 La query di ricerca
+ 🔁 Il loop di WordPress per mostrare i risultati
 
-# Pagina 404 con form di ricerca
+## Pagina 404 con form di ricerca 🚫
 Questa pagina viene visualizzata quando un utente tenta di accedere a una pagina che non esiste. In questo template, viene offerto un modulo di ricerca per aiutare l'utente a trovare ciò che stava cercando.
 
-## Requested URL:
+### Requested URL 🌐
 Viene ottenuta l'URL della richiesta e viene estratta l'ultima parte del percorso per usarla come query di ricerca:
 
-$requested_url = esc_html($_SERVER['REQUEST_URI']);
-$search_query = esc_html(basename($requested_url));
+ $requested_url = esc_html($_SERVER['REQUEST_URI']);
+ $search_query = esc_html(basename($requested_url));
 
 
-## Messaggio di Errore
+### Messaggio di Errore ⚠️
 Viene visualizzato un messaggio di errore che include il termine di ricerca estratto:
 
 <?php printf(esc_html__('"%s", questo contenuto non è presente...', 'name-theme'), $search_query); ?>
 
 
-## Form di Ricerca
+### Form di Ricerca 🔍
 Un modulo di ricerca che permette all'utente di effettuare una nuova ricerca:
 
 <form role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>" >
@@ -31,15 +31,15 @@ Un modulo di ricerca che permette all'utente di effettuare una nuova ricerca:
 
 
 
-# Pagina di ricerca
+## Pagina di ricerca 🔎
 Questa pagina visualizza i risultati della ricerca effettuata dall'utente.
 
-## Titolo di Ricerca
+### Titolo di Ricerca 📝 
 Mostra il termine di ricerca usato dall'utente:
 
 <h1><?php esc_html_e('Hai cercato: ', 'name-theme'); ?><span class="upper"> <?php the_search_query(); ?></span></h1>
 
-## Contenuto Principale:
+### Contenuto Principale 📄
 Una struttura che gestisce i risultati della ricerca
 
 <?php if ( have_posts() ) : ?>
@@ -62,7 +62,7 @@ Una struttura che gestisce i risultati della ricerca
 <?php endif; ?>
 
 
-## Paginazione:
+### Paginazione 🔄
 Se ci sono molti risultati, viene mostrata la paginazione:
 
 <div class="center">
@@ -73,7 +73,7 @@ Se ci sono molti risultati, viene mostrata la paginazione:
     )); ?>
 </div>
 
-## Form di Ricerca
+### Form di Ricerca 🔍
 Un modulo di ricerca per consentire all'utente di cercare nuovamente:
 
 <form role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>">
