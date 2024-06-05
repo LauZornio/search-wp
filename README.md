@@ -64,12 +64,11 @@ Una struttura che gestisce i risultati della ricerca
 
 ### Paginazione 🔄
 Se ci sono molti risultati, viene mostrata la paginazione:
-
 <div class="center">
     <?php the_posts_pagination(array(
         'mid_size' => 2,
         'prev_text' => __('<i class="fa-solid fa-chevron-left"></i>', 'name-theme'),
-        'next_text' => __('<i class="fa-solid fa-chevron-right"></i>', 'name-theme'),
+        'next_text' => __('<i class="fa-solid fa-chevron-right'></i>', 'name-theme'),
     )); ?>
 </div>
 
