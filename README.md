@@ -4,6 +4,8 @@ Il funzionamento del search in WordPress si basa su diversi componenti:
  🔎 La query di ricerca
  🔁 Il loop di WordPress per mostrare i risultati
 
+
+
 ## Pagina 404 con form di ricerca 🚫
 Questa pagina viene visualizzata quando un utente tenta di accedere a una pagina che non esiste. In questo template, viene offerto un modulo di ricerca per aiutare l'utente a trovare ciò che stava cercando.
 
@@ -13,12 +15,10 @@ Viene ottenuta l'URL della richiesta e viene estratta l'ultima parte del percors
  $requested_url = esc_html($_SERVER['REQUEST_URI']);
  $search_query = esc_html(basename($requested_url));
 
-
 ### Messaggio di Errore ⚠️
 Viene visualizzato un messaggio di errore che include il termine di ricerca estratto:
 
 <?php printf(esc_html__('"%s", questo contenuto non è presente...', 'name-theme'), $search_query); ?>
-
 
 ### Form di Ricerca 🔍
 Un modulo di ricerca che permette all'utente di effettuare una nuova ricerca:
@@ -28,6 +28,7 @@ Un modulo di ricerca che permette all'utente di effettuare una nuova ricerca:
     <input type="search" name="s" id="s" placeholder="Esempio: come donare, progetti, contatti ecc." required>
     <input type="submit" value="Ricerca" id="searchsubmit" name="submit" class="button-hero">
 </form>
+
 
 
 
@@ -61,7 +62,6 @@ Una struttura che gestisce i risultati della ricerca
     </div>
 <?php endif; ?>
 
-
 ### Paginazione 🔄
 Se ci sono molti risultati, viene mostrata la paginazione:
 
@@ -81,5 +81,3 @@ Un modulo di ricerca per consentire all'utente di cercare nuovamente:
     <input type="search" name="s" id="s" value="Hai cercato: '<?php the_search_query(); ?>'" required>
     <input type="submit" value="Ricerca" id="searchsubmit" name="submit" class="button-hero">
 </form>
-
-
