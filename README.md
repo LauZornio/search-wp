@@ -54,7 +54,7 @@ Una struttura che gestisce i risultati della ricerca
     </div>
 <?php endif; ?>
 
-🔄 Paginazione
+### Paginazione 🔄
 Se ci sono molti risultati, viene mostrata la paginazione:
 
 php
@@ -66,7 +66,8 @@ Copia codice
         'next_text' => __('<i class="fa-solid fa-chevron-right"></i>', 'name-theme'),
     )); ?>
 </div>
-🔍 Form di Ricerca
+
+### Form di Ricerca 🔍
 Un modulo di ricerca per consentire all'utente di cercare nuovamente:
 
 php
