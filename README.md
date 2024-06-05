@@ -54,21 +54,26 @@ Una struttura che gestisce i risultati della ricerca
     </div>
 <?php endif; ?>
 
-### Paginazione 🔄
+🔄 Paginazione
 Se ci sono molti risultati, viene mostrata la paginazione:
+
+php
+Copia codice
 <div class="center">
     <?php the_posts_pagination(array(
         'mid_size' => 2,
         'prev_text' => __('<i class="fa-solid fa-chevron-left"></i>', 'name-theme'),
-        'next_text' => __('<i class="fa-solid fa-chevron-right'></i>', 'name-theme'),
+        'next_text' => __('<i class="fa-solid fa-chevron-right"></i>', 'name-theme'),
     )); ?>
 </div>
-
-### Form di Ricerca 🔍
+🔍 Form di Ricerca
 Un modulo di ricerca per consentire all'utente di cercare nuovamente:
 
+php
+Copia codice
 <form role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>">
     <label for="s"><?php esc_html_e('Cosa stavi cercando? Cerca nel nostro sito Web', 'name-theme'); ?></label>
     <input type="search" name="s" id="s" value="Hai cercato: '<?php the_search_query(); ?>'" required>
     <input type="submit" value="Ricerca" id="searchsubmit" name="submit" class="button-hero">
 </form>
+
