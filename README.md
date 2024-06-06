@@ -22,16 +22,17 @@ esc_html__('"%s", questo contenuto non è presente. Può essere perché l\'indir
 Un modulo di ricerca che permette all'utente di effettuare una nuova ricerca:
 
 <form role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>" >
-    <label for="s"><?php esc_html_e('Cosa stavi cercando? Cerca nel nostro sito Web', 'name-theme'); ?></label>
-    <input type="search" name="s" id="s" placeholder="Esempio: come donare, progetti, contatti ecc." required>
-    <input type="submit" value="Ricerca" id="searchsubmit" name="submit" class="button-hero">
+        <label for="s"><?php esc_html_e('Cosa stavi cercando? Cerca nel nostro sito Web', 'name-theme'); ?></label>
+        <input type="search" name="s" id="s" placeholder="Esempio: come donare, progetti, contatti ecc." required>
+
+        <input type="submit" value="Ricerca" id="searchsubmit" name="submit" class="button-hero">
 </form>
 
 ## Pagina di ricerca 🔎
 Questa pagina visualizza i risultati della ricerca effettuata dall'utente.
 Mostra il termine di ricerca usato dall'utente:
 
-<h1><?php esc_html_e('Hai cercato: ', 'name-theme'); ?><span class="upper"> <?php the_search_query(); ?></span></h1>
+<h1><?php esc_html_e('Hai cercato: ', 'name-theme'); ?><span class="upper">   <?php the_search_query(); ?></span></h1>
 
 ### Contenuto Principale 📄
 Una struttura che gestisce i risultati della ricerca
@@ -58,24 +59,10 @@ Una struttura che gestisce i risultati della ricerca
 ### Paginazione 🔄
 Se ci sono molti risultati, viene mostrata la paginazione:
 
-php
-Copia codice
-<div class="center">
-    <?php the_posts_pagination(array(
-        'mid_size' => 2,
-        'prev_text' => __('<i class="fa-solid fa-chevron-left"></i>', 'name-theme'),
-        'next_text' => __('<i class="fa-solid fa-chevron-right"></i>', 'name-theme'),
-    )); ?>
-</div>
-
-### Form di Ricerca 🔍
-Un modulo di ricerca per consentire all'utente di cercare nuovamente:
-
-php
-Copia codice
-<form role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>">
-    <label for="s"><?php esc_html_e('Cosa stavi cercando? Cerca nel nostro sito Web', 'name-theme'); ?></label>
-    <input type="search" name="s" id="s" value="Hai cercato: '<?php the_search_query(); ?>'" required>
-    <input type="submit" value="Ricerca" id="searchsubmit" name="submit" class="button-hero">
-</form>
+<?php the_posts_pagination( array (
+          'mid_size' => 2,
+          'prev_text' => __( '<i class="fa-solid fa-chevron-left"></i>', 'name-theme' ),
+          'next_text' => __( '<i class="fa-solid fa-chevron-right"></i>', 'name-theme' ),
+        ));
+?>
 
