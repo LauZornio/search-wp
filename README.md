@@ -15,7 +15,8 @@ Viene ottenuta l'URL della richiesta e viene estratta l'ultima parte del percors
 ### Messaggio di Errore ⚠️
 Viene visualizzato un messaggio di errore che include il termine di ricerca estratto:
 
-<?php printf(esc_html__('"%s", questo contenuto non è presente...', 'name-theme'), $search_query); ?>
+esc_html__('"%s", questo contenuto non è presente. Può essere perché l\'indirizzo è sbagliato o che il contenuto stesso non sia più presente.', 'name-theme'),
+            $search_query);
 
 ### Form di Ricerca 🔍
 Un modulo di ricerca che permette all'utente di effettuare una nuova ricerca:
