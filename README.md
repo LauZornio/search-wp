@@ -32,7 +32,9 @@ Un modulo di ricerca che permette all'utente di effettuare una nuova ricerca:
 Questa pagina visualizza i risultati della ricerca effettuata dall'utente.
 Mostra il termine di ricerca usato dall'utente:
 
-<h1><?php esc_html_e('Hai cercato: ', 'name-theme'); ?><span class="upper">   <?php the_search_query(); ?></span></h1>
+<div class="text-intest-page">
+        <!--the_search_query(); visualizza la parola ricercata-->
+        <h1><?php esc_html_e('Hai cercato: ', 'name-theme'); ?><span class="upper">   <?php the_search_query(); ?></span></h1>
 
 ### Contenuto Principale 📄
 Una struttura che gestisce i risultati della ricerca
